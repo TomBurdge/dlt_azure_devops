@@ -57,8 +57,6 @@ if __name__ == "__main__":
     client_id = os.environ["client_id"]
     client_secret = os.environ["client_secret"]
 
-    pipeline_name = "pn-pdap-product-core"
-
     # Load credetials
     # credentials = BasicAuthentication("", personal_access_token)
     credentials = OAuthTokenAuthentication(client_id=client_id, token=token)
