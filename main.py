@@ -61,7 +61,6 @@ if __name__ == "__main__":
 
     # Load credetials
     # credentials = BasicAuthentication("", personal_access_token)
-    # TODO: add relevant right sort of values for scope/authority
     token = load_oauth_token(
         client_id=client_id, client_secret=client_secret, authority="todo", scope="todo"
     )
