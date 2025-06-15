@@ -1,0 +1,15 @@
+[project]
+name = "dlt-azure-devops"
+version = "0.1.0"
+description = "Ingest [Azure Devops Pipeline](https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops) logs with the [Microsoft Python Azure Devops SDK](https://github.com/microsoft/azure-devops-python-api/tree/dev) & [data load tool](https://github.com/dlt-hub/dlt)."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+  "azure-devops>=7.1.0b4",
+  "dlt[duckdb]>=1.11.0",
+  "msal>=1.32.3",
+  "python-dotenv>=1.1.0",
+]
+
+[dependency-groups]
+dev = ["pre-commit>=4.2.0", "ty>=0.0.1a10"]
