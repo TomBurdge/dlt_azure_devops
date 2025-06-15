@@ -55,6 +55,9 @@ if __name__ == "__main__":
     organization_url = f"https://dev.azure.com/{org_name}"
     client_id = os.environ["client_id"]
     client_secret = os.environ["client_secret"]
+    scope = ["https://graph.microsoft.com/.default"]
+    tenant_name = os.environ["tenant_name"]
+    authority = f"https://login.microsoftonline.com/{tenant_name}"
 
     # Load credetials
     # credentials = BasicAuthentication("", personal_access_token)
