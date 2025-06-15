@@ -8,7 +8,7 @@ import msal
 
 
 def load_oauth_token(
-    client_id: str, client_secret: str, authority: str, scope: str, endpoint: str
+    client_id: str, client_secret: str, authority: str, scope: str
 ) -> str:
     # adapted from:
     # https://github.com/AzureAD/microsoft-authentication-library-for-python/blob/1.22.0/sample/confidential_client_secret_sample.py
@@ -48,17 +48,20 @@ if __name__ == "__main__":
     # Load secret configs
     load_dotenv()
 
-    personal_access_token = os.environ["devops_pat"]
+    # personal_access_token = os.environ["devops_pat"]
     pipeline_name = os.environ["pipeline_name"]
     project_name = os.environ["project_name"]
     org_name = os.environ["org_name"]
     organization_url = f"https://dev.azure.com/{org_name}"
-    token = os.environ["token"]
     client_id = os.environ["client_id"]
     client_secret = os.environ["client_secret"]
 
     # Load credetials
     # credentials = BasicAuthentication("", personal_access_token)
+    # TODO: add relevant right sort of values for scope/authority
+    token = load_oauth_token(
+        client_id=client_id, client_secret=client_secret, authority="todo", scope="todo"
+    )
     credentials = OAuthTokenAuthentication(client_id=client_id, token=token)
 
     # Load client connection
